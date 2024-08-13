@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Estonia&family=Quicksand:wght@400;500&family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Gupter:wght@400;500;700&family=Maname&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Khitan+Small+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Gupter:wght@400;500;700&family=Maname&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Khitan+Small+Script&display=swap');
 *{
     margin:0;
     padding:0;
@@ -98,7 +97,6 @@ th {
     width: 16.666666666666664%;
     padding: 1.5rem 0 0 0;
     font-weight: 700;
-    /* letter-spacing: 0.5rem; */
 }
 
 td {
@@ -107,7 +105,6 @@ td {
 }
 
 input, .grad {
-   
     max-width: 80px;
     background-color:antiquewhite;
     padding: 8px 10px;
@@ -155,3 +152,4 @@ input, .grad {
     font-weight: 700;
     margin-top: auto;
 }
+

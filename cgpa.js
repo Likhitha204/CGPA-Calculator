@@ -1,5 +1,5 @@
 var nrows = 0;
-
+//GPA Table
 document.getElementById("gpa_cal").onclick = function () {
   document.getElementById("mini-container").style.display = "block";
   document.getElementById("main-table").style.display = "none";
@@ -10,22 +10,19 @@ document.getElementById("gpa_cal").onclick = function () {
   tableElement.innerHTML = "";
   document.getElementById("show_result").innerHTML = "";
   document.getElementById("table_heading").innerHTML = "";
-
   document.getElementById("choose_dropdown").innerHTML =
-    "<p>Enter number of courses: <select id='courses_drop_down'> <option value='2'>2</option> <option value='3'>3</option> <option value='4'>4</option> <option value='5'>5</option> <option value='6'>6</option> <option value='7'>7</option> <option value='8'>8</option> <option value='9'>9</option> </select> <input id='submit' class='buttons dropdown-submit-btn' type='submit'> </p>";
+  "<p>Enter number of courses: <select id='courses_drop_down'> <option value='2'>2</option> <option value='3'>3</option> <option value='4'>4</option> <option value='5'>5</option> <option value='6'>6</option> <option value='7'>7</option> <option value='8'>8</option> <option value='9'>9</option> </select> <input id='submit' class='buttons dropdown-submit-btn' type='submit'> </p>";
 
-  document.getElementById("submit").onclick = function () {
+    document.getElementById("submit").onclick = function () {
     document.getElementById("main-table").style.display = "block";
     document.getElementById("submit_button").style.display = "inline";
     document.getElementById("result-show-div").style.display = "none";
-
     document.getElementById("show_result").innerHTML = "";
-    document.getElementById("table_heading").innerHTML =
-      "<th>Course</th> <th>Credits</th> <th>Grade</th>";
+    document.getElementById("table_heading").innerHTML ="<th>Course</th> <th>Credits</th> <th>Grade</th>";
+    
     var selectField = document.getElementById("courses_drop_down");
     var selected = selectField.options.selectedIndex;
     var selectedValue = selectField.options[selected];
-
     var a = parseInt(selectedValue.innerHTML);
     nrows = a;
     tableElement.innerHTML = "";
@@ -35,7 +32,6 @@ document.getElementById("gpa_cal").onclick = function () {
         (i + 1) +
         "'> </td> <td> <input class='cred' onKeyDown='if(this.value.length==1 && event.keyCode!=8) return false;' required type='number'> </td> <td> <select class='grad'> <option value=''>Grade</option> <option value='10'>O</option> <option value='9'>A</option> <option value='8'>B</option> <option value='7'>C</option> <option value='6'>D</option> <option value='5'>E</option> <option value='0'> N/F </option> </select> </td>";
     }
-
     document.getElementById("submit_button").innerHTML =
       "<input type='submit' class='buttons calc-btn' value='Calculate'>";
   };
@@ -43,24 +39,25 @@ document.getElementById("gpa_cal").onclick = function () {
   document.getElementById("submit_button").onclick = function () {
     var gradePoints = 0;
     var creditsTotal = 0;
-
     var creditArray = document.getElementsByClassName("cred");
     var gradeArray = document.getElementsByClassName("grad");
-
     for (var i = 0; i < nrows; i++) {
       creditsTotal += parseInt(creditArray[i].value);
       gradePoints +=
         parseInt(gradeArray[i].value) * parseInt(creditArray[i].value);
     }
-
     var res = gradePoints / creditsTotal;
     document.getElementById("result-show-div").style.display = "block";
     document.getElementById("show_result").innerHTML =
       "Your GPA comes out to be: <span id='final-val'>" +
-      res.toFixed(2) +
+      res.toFixed(2) + 
       "</span>";
   };
 };
+
+
+
+
 
 document.getElementById("cgpa_cal").onclick = function () {
   document.getElementById("mini-container").style.display = "block";
@@ -72,7 +69,6 @@ document.getElementById("cgpa_cal").onclick = function () {
   tableElement.innerHTML = "";
   document.getElementById("show_result").innerHTML = "";
   document.getElementById("table_heading").innerHTML = "";
-
   document.getElementById("choose_dropdown").innerHTML =
     "<p>Enter number of semesters: <select id='courses_drop_down'> <option value='2'>2</option> <option value='3'>3</option> <option value='4'>4</option> <option value='5'>5</option> <option value='6'>6</option> <option value='7'>7</option> <option value='8'>8</option> </select> <input id='submit' class='buttons dropdown-submit-btn' type='submit'> </p>";
 
@@ -80,15 +76,12 @@ document.getElementById("cgpa_cal").onclick = function () {
     document.getElementById("main-table").style.display = "block";
     document.getElementById("submit_button").style.display = "inline";
     document.getElementById("result-show-div").style.display = "none";
-
     document.getElementById("show_result").innerHTML = "";
-
     document.getElementById("table_heading").innerHTML =
       "<th>Semester</th> <th>Credits</th> <th>GPA</th>";
     var selectField = document.getElementById("courses_drop_down");
     var selected = selectField.options.selectedIndex;
     var selectedValue = selectField.options[selected];
-
     var a = parseInt(selectedValue.innerHTML);
     nrows = a;
     tableElement.innerHTML = "";
@@ -101,12 +94,11 @@ document.getElementById("cgpa_cal").onclick = function () {
 
     document.getElementById("submit_button").innerHTML =
       "<input type='submit'; class='buttons calc-btn'  value='Calculate'>";
-  };
+    };
 
   document.getElementById("submit_button").onclick = function () {
     var gradePoints = 0;
     var creditsTotal = 0;
-
     var creditArray = document.getElementsByClassName("cred");
     var gradeArray = document.getElementsByClassName("grad");
 
